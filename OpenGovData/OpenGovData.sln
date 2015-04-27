@@ -3,8 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E4AA4FC6-CE89-471F-B981-6D4B0A6C09B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{9DDA5B39-00FC-4428-A243-FF3773CF1C71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{302526C7-D883-452D-9B2D-E904DCB422FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusRules", "BusRules", "{25A3DD9D-910A-4BB0-9FED-B42880822CC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3EF69DE6-334F-4842-9942-CF4AE87E4879}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{1639F201-AB0F-47BD-8FFA-5B4F4DC466F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccqu", "DataAccqu", "{53E92DED-924D-47A6-8C61-ED0CBD780AF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadBankInstitutions", "ReadBankInstitutions\ReadBankInstitutions.csproj", "{97D8A06A-3256-4DF6-B363-593D222AAFD5}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97D8A06A-3256-4DF6-B363-593D222AAFD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D8A06A-3256-4DF6-B363-593D222AAFD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D8A06A-3256-4DF6-B363-593D222AAFD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97D8A06A-3256-4DF6-B363-593D222AAFD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97D8A06A-3256-4DF6-B363-593D222AAFD5} = {53E92DED-924D-47A6-8C61-ED0CBD780AF0}
 	EndGlobalSection
 EndGlobal
