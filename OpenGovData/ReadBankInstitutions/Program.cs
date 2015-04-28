@@ -1,15 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ReadBankInstitutions
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            var sw = new Stopwatch();
+            sw.Start();
+            var bd = new BankDetails();
+            bd.ReadStoreValues();
+            Console.WriteLine("Application ran for {0}", sw.Elapsed);
+            Console.ReadKey();
         }
     }
 }
