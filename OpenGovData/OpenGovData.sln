@@ -30,6 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Performance1.psess = Performance1.psess
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVTools", "CSVTools\CSVTools.csproj", "{8FB8CD80-1B4F-47B1-801A-429AA3514342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVToolsTests", "CSVToolsTests\CSVToolsTests.csproj", "{FB7D97A5-7081-4806-B139-761EAB45AF48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,13 +52,27 @@ Global
 		{A1D989F9-0BF6-4766-8638-7DC39A29B49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1D989F9-0BF6-4766-8638-7DC39A29B49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1D989F9-0BF6-4766-8638-7DC39A29B49A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB8CD80-1B4F-47B1-801A-429AA3514342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB8CD80-1B4F-47B1-801A-429AA3514342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB8CD80-1B4F-47B1-801A-429AA3514342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB8CD80-1B4F-47B1-801A-429AA3514342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB7D97A5-7081-4806-B139-761EAB45AF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7D97A5-7081-4806-B139-761EAB45AF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7D97A5-7081-4806-B139-761EAB45AF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7D97A5-7081-4806-B139-761EAB45AF48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{97D8A06A-3256-4DF6-B363-593D222AAFD5} = {53E92DED-924D-47A6-8C61-ED0CBD780AF0}
+		{FC5F1E9C-D021-4FAD-A0F4-09B5E9D5E77D} = {3EF69DE6-334F-4842-9942-CF4AE87E4879}
 		{2BB400CD-DDB5-415C-A9C2-B5B3D703AC83} = {9DDA5B39-00FC-4428-A243-FF3773CF1C71}
 		{A1D989F9-0BF6-4766-8638-7DC39A29B49A} = {2BB400CD-DDB5-415C-A9C2-B5B3D703AC83}
+		{8FB8CD80-1B4F-47B1-801A-429AA3514342} = {E4AA4FC6-CE89-471F-B981-6D4B0A6C09B4}
+		{FB7D97A5-7081-4806-B139-761EAB45AF48} = {3EF69DE6-334F-4842-9942-CF4AE87E4879}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

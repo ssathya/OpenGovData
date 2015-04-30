@@ -16,8 +16,11 @@ namespace ReadBankInstitutions.Tests
         [TestMethod]
         public void ReadExternalData()
         {
-            _bd.ReadStoreValues();
-            Assert.IsTrue(_bd.FileLenght == 27598);
+            _bd.ReadStoreValues(2);
+            Assert.IsTrue(_bd.FileLenght == 2);
+            //_bd = new BankDetails();
+            //_bd.ReadStoreValues(0);
+            //Assert.IsTrue(_bd.FileLenght == 27598);
         }
     }
 }
