@@ -2,7 +2,7 @@
 
 namespace InputDataModel
 {
-    public class Institution
+    public class InstitutionRawData
     {
         public string Stname { get; set; }
 

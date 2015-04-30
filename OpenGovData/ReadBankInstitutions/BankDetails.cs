@@ -14,11 +14,11 @@ namespace ReadBankInstitutions
     {
         #region Private Fields
 
-        private const string DataFile = "App_Data/Institutions2.csv";
-        private const string DestinationDirectory = "App_Data/";
+        private readonly string _dataFile = "/Institutions2.csv";
+        private readonly string _dataDirectory = "/App_Data/";
         private const string FileUrl = "https://www2.fdic.gov/idasp/Institutions2.zip";
-        private const string InstitutionsFile = "App_Data/Institutions2.zip";
-        public readonly IList<Institution> institutions;
+        private readonly string _institutionsFile = "/Institutions2.zip";
+        public readonly IList<InstitutionRawData> Institutions;
 
         #endregion Private Fields
 
@@ -29,7 +29,11 @@ namespace ReadBankInstitutions
         /// </summary>
         public BankDetails()
         {
-            institutions = new List<Institution>();
+            Institutions = new List<InstitutionRawData>();
+            var appPath = AppDomain.CurrentDomain.BaseDirectory;
+            _dataDirectory = appPath + _dataDirectory;
+            _institutionsFile = _dataDirectory + _institutionsFile;
+            _dataFile = _dataDirectory + _dataFile;
         }
 
         #endregion Public Constructors
@@ -51,22 +55,22 @@ namespace ReadBankInstitutions
                 limit = int.MaxValue;
             var fuExternalFile =
                 new FetchUncomressExternalFile();
-            fuExternalFile.GetExternalFile(FileUrl, DestinationDirectory, InstitutionsFile);
-            fuExternalFile.UncompressExternalFile(DataFile, DestinationDirectory);
+            fuExternalFile.GetExternalFile(FileUrl, _dataDirectory, _institutionsFile);
+            fuExternalFile.UncompressExternalFile(_institutionsFile, _dataDirectory);
 
-            var reader = File.OpenText(DataFile);
+            var reader = File.OpenText(_dataFile);
             var csv = new CsvReader(reader);
             var read = csv.Read();
             var fields = csv.FieldHeaders;
 
-            Type type = typeof(Institution);
+            Type type = typeof(InstitutionRawData);
             var ip = type.GetProperties();
             var institutionProperties =
                 ip.ToDictionary(propertyInfo => propertyInfo.Name.ToLower());
 
             do
             {
-                var institution = new Institution();
+                var institution = new InstitutionRawData();
 
                 var i = 0;
                 i = fields.Aggregate(i, (current, field) => PopulateInstitution(
@@ -76,7 +80,7 @@ namespace ReadBankInstitutions
                     Console.WriteLine("Processed {0} rows", FileLenght);
 
                 read = csv.Read();
-                institutions.Add(institution);
+                Institutions.Add(institution);
             } while (read && FileLenght < limit);
         }
 
@@ -95,7 +99,7 @@ namespace ReadBankInstitutions
         /// <returns></returns>
         [LogToErrorOnException]
         private int PopulateInstitution(CsvReader csv, int i, string field, Dictionary<string, PropertyInfo> institutionProperties,
-            Institution institution)
+            InstitutionRawData institution)
         {
             //var fieldValue = csv.GetField<string>(field);
             //switching to index read; about 30 times faster.
